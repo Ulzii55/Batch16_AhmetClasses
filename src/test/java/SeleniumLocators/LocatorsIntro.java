@@ -18,7 +18,7 @@ public class LocatorsIntro {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         WebDriver driver = new ChromeDriver(options);
-        driver.navigate().to("file:///Users/ulziiganbat/Desktop/Techtorial.html");
+        driver.navigate().to("file:///Users/ulziiganbat/Downloads/Techtorial.html");
         driver.manage().window().maximize();
         WebElement header = driver.findElement(By.id("techtorial1"));
         String actualHeader = header.getText().trim();  // it gets the text from element

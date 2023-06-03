@@ -68,6 +68,7 @@ public class OpenChartTestNGPractice {
 
     }
 
+    @Test
     public void validateProductButton() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
@@ -140,6 +141,7 @@ public class OpenChartTestNGPractice {
 
     }
 
+    @Test
     public void validateProductNameDescending() throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
@@ -175,6 +177,8 @@ public class OpenChartTestNGPractice {
         List<String> expectedData = new ArrayList<String>();
 
         for (int i = 1; i < elements.size(); i++) {
+            //actualdata.add(elements.get(i).getText().toLowerCase().trim());
+            //expecdetData.add(elements.get(i).geText().ToLowerCase().trim());
             WebElement element = elements.get(i);
             String Name = element.getText().toLowerCase();
             actualData.add(Name);
