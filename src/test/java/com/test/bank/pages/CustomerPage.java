@@ -40,7 +40,7 @@ public class CustomerPage {
     WebElement withdraw;
     @FindBy(xpath = "//span[.='Transaction successful']")
     WebElement transactionSuccessfulMsg;
-    @FindBy(xpath = "//strong[.='200']")
+    @FindBy(xpath = "//strong[.='200']")   //div[@ng-hide='noAccount']//strong[2] use indexing !!!
     WebElement balance;
     @FindBy(xpath = "//button[contains(text(),'Transactions')]")
     WebElement transactionButton;

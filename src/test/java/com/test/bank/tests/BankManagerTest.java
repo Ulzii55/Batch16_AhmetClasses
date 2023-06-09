@@ -10,41 +10,27 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class BankManagerTest {
+public class BankManagerTest extends BankTestBase {
     @Test
     public void validateAddCustomerFunctionality() throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        WebDriver driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
-        driver.navigate().to("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
+
 
         BankLoginPage loginPage = new BankLoginPage(driver);
         loginPage.clickManagerButton();
         BankManagerPage bankManagerPage = new BankManagerPage(driver);
-        bankManagerPage.addCustomerFunctionality(driver, "Ahmet", "Baldir",
+        bankManagerPage.addCustomerFunctionality(driver, "Ulzii", "Ganbat",
                 "60123", "Customer added successfully with customer id");
-
-
     }
 
     @Test
     public void validateOpenAccountFunctionality() throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        WebDriver driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
-        driver.navigate().to("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
+
         BankLoginPage loginPage = new BankLoginPage(driver);
         loginPage.clickManagerButton();
         BankManagerPage bankManagerPage = new BankManagerPage(driver);
-        bankManagerPage.addCustomerFunctionality(driver, "Ahmet", "Baldir",
+        bankManagerPage.addCustomerFunctionality(driver, "Ulzii", "Ganbat",
                 "60123", "Customer added successfully with customer id");
-        bankManagerPage.OpenAccountFunctionality(driver, "Ahmet Baldir", "Dollar",
+        bankManagerPage.OpenAccountFunctionality(driver, "Ulzii Ganbat", "Dollar",
                 "Account created successfully with account Number");
 
 
@@ -52,30 +38,18 @@ public class BankManagerTest {
 
     @Test
     public void validateCustomerFunctionality() throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        WebDriver driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
-        driver.navigate().to("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
+
         BankLoginPage loginPage = new BankLoginPage(driver);
         loginPage.clickManagerButton();
         BankManagerPage bankManagerPage = new BankManagerPage(driver);
-        bankManagerPage.addCustomerFunctionality(driver, "Uzii", "Ganbat",
+        bankManagerPage.addCustomerFunctionality(driver, "Ulzii", "Ganbat",
                 "60123", "Customer added successfully with customer id");
-        bankManagerPage.OpenAccountFunctionality(driver, "Ganbat Ulzii", "Dollar",
+        Thread.sleep(2000);
+        bankManagerPage.OpenAccountFunctionality(driver, "Ulzii Ganbat", "Dollar",
                 "Account created successfully with account Number");
         bankManagerPage.customersButtonFunctionality("Ulzii", "Ganbat", "60123");
 
     }
 
 
-
-
-
-
-
-
-
-    }
+}
