@@ -5,15 +5,19 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class CustomerPage {
     public CustomerPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
 
+
     }
+
 
     @FindBy(xpath = "//i[@class='fas fa-plus']")
     WebElement addCustomer;
@@ -31,13 +35,13 @@ public class CustomerPage {
     WebElement newsLetterButton;
     @FindBy(css = "#input-safe")
     WebElement safeButton;
-    @FindBy(xpath = "//i[@class='fas fa-save']")
+    @FindBy(xpath = "//button[@aria-label='Save']")  //button[@aria-label='Save']
     WebElement customerSaveButton;
-    @FindBy(xpath = "div[@id='alert']")
+    @FindBy(css = ".alert")
     WebElement warningMessage;
 
-    public void customerAddFunctionality(String firstName,String lastName,String email,
-                                         String password,String confirmPassword) throws InterruptedException {
+    public void customerAddFunctionality(WebDriver driver,String firstName, String lastName, String email,
+                                         String password, String confirmPassword) throws InterruptedException {
         addCustomer.click();
         Thread.sleep(500);
         this.firstName.sendKeys(firstName);
@@ -45,29 +49,14 @@ public class CustomerPage {
         this.email.sendKeys(email);
         this.password.sendKeys(password);
         this.confirmPassword.sendKeys(confirmPassword);
-        Thread.sleep(500);
-        this.newsLetterButton.click();
-        Thread.sleep(500);
-        this.safeButton.click();
-        Thread.sleep(500);
-        this.customerSaveButton.click();
-    }
-
-    public String validateWarningmessage(){
-        return BrowserUtils.getText(warningMessage);
-    }
+        BrowserUtils.scrollWithJS(driver,newsLetterButton);
+        BrowserUtils.clickWithJS(driver,newsLetterButton);
+        BrowserUtils.clickWithJS(driver,safeButton);
+        customerSaveButton.click();
+        Assert.assertEquals(BrowserUtils.getText(warningMessage),"Warning: You do not have permission to modify customers!");
 
 
-
-
-
-
-
-
-
-
-
-
+   }
 
 
 }

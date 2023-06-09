@@ -14,15 +14,11 @@ public class CustomerPageTest extends OpenChartTestBase {
         OpenChartLoginPage openChartLoginPage = new OpenChartLoginPage(driver);
         openChartLoginPage.loginFunctionality("demo", "demo");
         MainPage mainPage = new MainPage(driver);
-        mainPage.clickCloseButton();
-        mainPage.clickCustomerMenuButton();
-        mainPage.clickCustomerButton();
-
+        mainPage.mainPageFunctionality();
 
         CustomerPage customerPage=new CustomerPage(driver);
-        customerPage.customerAddFunctionality("ulzii","ganbat","ulzii@gmail.com",
-                "ulzii1234","ulzii1234");
-              Assert.assertEquals(customerPage.validateWarningmessage(),
-                      "Warning: You do not have permission to modify customers!");
+        customerPage.customerAddFunctionality(driver,"Ulzii","Ganbat","ulzii@gmail.com",
+                "12345","12345");
+
     }
 }

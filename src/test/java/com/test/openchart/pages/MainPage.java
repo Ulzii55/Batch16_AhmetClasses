@@ -21,18 +21,15 @@ public class MainPage {
 
 
 
-    public void clickCloseButton() throws InterruptedException {
+    public void mainPageFunctionality() throws InterruptedException {
         closeButton.click();
-        Thread.sleep(2000);
-
-    }
-
-    public void clickCustomerMenuButton() {
+        Thread.sleep(500);
         customerMenuButton.click();
-    }
-
-    public void clickCustomerButton() {
+        Thread.sleep(500);
         customerButton.click();
+        Thread.sleep(500);
+
+
     }
 }
 
