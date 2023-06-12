@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Smoke Suite!!!]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Blaze test(failed)">
+    <classes>
+      <class name="com.test.blaze.tests.CartTest">
+        <methods>
+          <include name="cartPage"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.test.blaze.tests.CartTest -->
+    </classes>
+  </test> <!-- Blaze test(failed) -->
+</suite> <!-- Failed suite [Smoke Suite!!!] -->
