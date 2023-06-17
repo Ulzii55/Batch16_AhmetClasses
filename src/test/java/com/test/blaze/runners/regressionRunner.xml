@@ -5,21 +5,82 @@
 <suite name="Regression Suite!!!">
 
     <test name="Blaze Test">
+        <parameter name="Product" value="Laptops"> </parameter>
+        <parameter name="MacBook" value="MacBook Pro"> </parameter>
+        <parameter name="expectedHeader" value="MacBook Pro"> </parameter>
+        <parameter name="expectedPrice" value="$1100 *includes tax"> </parameter>
+        <parameter name="expectedDescription" value="Product description\n +
+        Apple has introduced three new versions of its MacBook Pro line, including a  +
+        13-inch and 15-inch model with the Touch Bar, a thin, multi-touch strip display that  +
+        sits above the MacBook Pro's keyboard."> </parameter>
+        <parameter name="expectedAlertmsg" value="Product added"> </parameter>
+
+        <parameter name="Category" value="Laptop"> </parameter>
+        <parameter name="Product" value="Product added"> </parameter>
+        <parameter name="name" value="Ulzii"> </parameter>
+        <parameter name="country" value="Mongolia"> </parameter>
+        <parameter name="city" value="Ulanbator"> </parameter>
+        <parameter name="creditCard" value="12345678910"> </parameter>
+        <parameter name="month" value="12"> </parameter>
+        <parameter name="year" value="2023"> </parameter>
+        <parameter name="expectedMessage" value="Thank you for your purchase!"> </parameter>
+
+        <parameter name="url" value="https://www.demoblaze.com/#"> </parameter>
+        <parameter name="packageName" value="blazePictures"> </parameter>
 
         <classes>
-            <class name="com.test.blaze.tests.BlazeMacBookTest"></class>
-            <class name="com.test.blaze.tests.CartTest"></class>
-            <class name="com.test.blaze.tests.BlazeTestBase"></class>
+            <class name="com.test.blaze.tests.BlazeMacBookTest"> </class>
+            <class name="com.test.blaze.tests.CartTest"> </class>
+            <class name="com.test.blaze.tests.BlazeTestBase"> </class>
 
         </classes>
 
 
     </test>
     <test name="bank test">
+        <parameter name="arguments" value="--remote-allow-origins=*"> </parameter>
+        <parameter name="url" value="https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login"> </parameter>
+
+        <parameter name="firstName" value="Ulzii"> </parameter>
+        <parameter name="lastName" value="Ganbat"> </parameter>
+        <parameter name="postCode" value="60123"> </parameter>
+        <parameter name="expectedMessage" value="Customer added successfully with customer id"> </parameter>
+        <parameter name="name" value="Ulzii Ganbat"> </parameter>
+        <parameter name="currency" value="Dollar"> </parameter>
+        <parameter name="expectedMessage" value="Account created successfully with account Number"> </parameter>
+
+        <parameter name="firstName" value="Ulzii"> </parameter>
+        <parameter name="lastName" value="Ganbat"> </parameter>
+        <parameter name="postCode" value="60123"> </parameter>
+        <parameter name="expectedMessage1" value="Customer added successfully with customer id"> </parameter>
+        <parameter name="name" value="Ulzii Ganbat"> </parameter>
+        <parameter name="currency" value="Dollar"> </parameter>
+        <parameter name="expectedMessage2" value="Account created successfully with account Number"> </parameter>
+        <parameter name="customerName" value="Ulzii"> </parameter>
+        <parameter name="lastName" value="Ganbat"> </parameter>
+        <parameter name="postCode" value="60123"> </parameter>
+
+        <parameter name="firstName" value="Ulzii"> </parameter>
+        <parameter name="lastName" value="Ganbat"> </parameter>
+        <parameter name="postCode" value="60123"> </parameter>
+        <parameter name="expectedMessage" value="Customer added successfully with customer id"> </parameter>
+        <parameter name="name" value="Ulzii"> </parameter>
+        <parameter name="currency" value="Dollar"> </parameter>
+        <parameter name="expectedMessage" value="Account created successfully with account Number"> </parameter>
+        <parameter name="customerName" value="Ulzii"> </parameter>
+        <parameter name="lastName" value="Ulzii"> </parameter>
+        <parameter name="fullName" value="Ulzii Ganbat"> </parameter>
+        <parameter name="depositAmount" value="500"> </parameter>
+        <parameter name="expectedMessage" value="Deposit Successful"> </parameter>
+        <parameter name="withdraw" value="300"> </parameter>
+        <parameter name="transactionMSG" value="Transaction successful"> </parameter>
+        <parameter name="balance" value="200"> </parameter>
+
+
         <classes>
-            <class name="com.test.bank.tests.BankLoginTest"></class>
-            <class name="com.test.bank.tests.BankManagerTest"></class>
-            <class name="com.test.bank.tests.customerPageTest"></class>
+            <class name="com.test.bank.tests.BankLoginTest"> </class>
+            <class name="com.test.bank.tests.BankManagerTest"> </class>
+            <class name="com.test.bank.tests.customerPageTest"> </class>
 
         </classes>
 

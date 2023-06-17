@@ -22,7 +22,7 @@ public class SpruceTestBase {
         if (!iTestResult.isSuccess()) {
             BrowserUtils.getScreenShot(driver, "blazePictures");
         }
-        driver.quit();
+        //driver.quit();
     }
 }
 

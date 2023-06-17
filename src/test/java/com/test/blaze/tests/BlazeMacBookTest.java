@@ -3,24 +3,24 @@ package com.test.blaze.tests;
 import com.test.blaze.pages.HomePage;
 import com.test.blaze.pages.LaptopPage;
 import com.test.blaze.pages.MacBookProPage;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class BlazeMacBookTest extends BlazeTestBase{
+public class BlazeMacBookTest extends BlazeTestBase {
+    @Parameters({"Product", "MacBook", "expectedHeader", "expectedPrice", "expectedDescription",
+            "expectedAlertmsg"})
     @Test
-     public void homePage() throws InterruptedException {
-         HomePage homePage=new HomePage(driver);
-         homePage.clickLaptop("Laptops");
-         LaptopPage laptopPage=new LaptopPage(driver);
-         laptopPage.chooseLaptopBrands("MacBook Pro");
-        MacBookProPage macBookProPage=new MacBookProPage(driver);
-        macBookProPage.macbookProInformation("MacBook Pro",
-                "$1100 *includes tax",
-                "Product description\n" +
-                        "Apple has introduced three new versions of its MacBook Pro line, including a " +
-                        "13-inch and 15-inch model with the Touch Bar, a thin, multi-touch strip display that " +
-                        "sits above the MacBook Pro's keyboard.");
+    public void homePage(String product, String MacBook, String expectedHeader, String expectedPrice,
+                         String expectedDescription, String expectedAlertMsg) throws InterruptedException {
+        HomePage homePage = new HomePage(driver);
+        homePage.clickLaptop(product);
+        LaptopPage laptopPage = new LaptopPage(driver);
+        laptopPage.chooseLaptopBrands(MacBook);
+        MacBookProPage macBookProPage = new MacBookProPage(driver);
+        macBookProPage.macbookProInformation(expectedHeader,
+                expectedPrice, expectedDescription);
 
-        macBookProPage.clickAddToCartButton(driver,"Product added");
+        macBookProPage.clickAddToCartButton(driver, expectedAlertMsg);
 
     }
 

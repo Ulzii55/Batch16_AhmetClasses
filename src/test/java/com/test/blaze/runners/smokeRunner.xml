@@ -3,6 +3,15 @@
 <suite name="Smoke Suite!!!">
 
     <test name="Blaze test">
+        <parameter name="Category" value="Laptop"> </parameter>
+        <parameter name="Product" value="Product added"> </parameter>
+        <parameter name="name" value="Ulzii"> </parameter>
+        <parameter name="country" value="Mongolia"> </parameter>
+        <parameter name="city" value="Ulanbator"> </parameter>
+        <parameter name="creditCard" value="12345678910"> </parameter>
+        <parameter name="month" value="12"> </parameter>
+        <parameter name="year" value="2023"> </parameter>
+        <parameter name="expectedMessage" value="Thank you for your purchase!"> </parameter>
 
         <classes>
             <class name="com.test.blaze.tests.CartTest"></class>
@@ -10,8 +19,9 @@
         </classes>
     </test>
     <test name="Bank Test">
+        <parameter name="expectedHeader" value="XYZ Bank"></parameter>
         <classes>
-            <class name="com.test.bank.tests.BankLoginTest"> </class>
+            <class name="com.test.bank.tests.BankLoginTest"></class>
 
         </classes>
     </test>

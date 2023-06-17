@@ -33,17 +33,36 @@ public class PlaceOrderPage {
     WebElement okButton;
 
     public void placeOrderFunctionality(String name,String country,String city,String creditCard,String month,String year,
-                                        String expectedMessage){
+                                        String expectedMessage) throws InterruptedException {
+        Thread.sleep(1000);
         placeOrderButton.click();
+        Thread.sleep(1000);
+
         this.name.sendKeys(name);
+        Thread.sleep(1000);
+
         this.country.sendKeys(country);
+        Thread.sleep(1000);
+
         this.city.sendKeys(city);
+        Thread.sleep(1000);
+
         this.creditCard.sendKeys(creditCard);
+        Thread.sleep(1000);
+
         this.expirationMonth.sendKeys(month);
+        Thread.sleep(1000);
+
         this.expirationYear.sendKeys(year);
+        Thread.sleep(1000);
+
         purchaseButton.click();
+        Thread.sleep(1000);
+
         Assert.assertEquals(BrowserUtils.getText(message),expectedMessage);
         okButton.click();
+        Thread.sleep(1000);
+
 
     }
 

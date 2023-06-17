@@ -32,6 +32,7 @@ public class SeafoodPage {
         searchBar.sendKeys(foodName);
         searchBar.sendKeys(Keys.ENTER);
         Thread.sleep(3000);
+        fourStarCheckBox.click();
         if (editorCheckBox.isDisplayed()&&editorCheckBox.isEnabled()&&!editorCheckBox.isSelected()){
             editorCheckBox.click();
         }

@@ -1,5 +1,6 @@
 package TestNG;
 
+import Utils.ConfigReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import net.bytebuddy.asm.Advice;
 import org.openqa.selenium.By;
@@ -25,16 +26,15 @@ public class OpenChartTestNGPractice {
         WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://demo.opencart.com/admin/");
+        driver.get(ConfigReader.readProperty("QA_url"));
 
         WebElement userName = driver.findElement(By.xpath("//input[@id='input-username']"));
-        userName.sendKeys("demo");
+        userName.sendKeys(ConfigReader.readProperty("QA_opencart_username"));
         WebElement password = driver.findElement(By.xpath("//input[@id='input-password']"));
-        password.sendKeys("demo");
+        password.sendKeys(ConfigReader.readProperty("QA_opencart_password"));
         WebElement loginButton = driver.findElement(By.xpath("//button[@class='btn btn-primary']"));
         loginButton.click();
         Thread.sleep(2000);
-
         String actualTitle = driver.getTitle();
         String expectedTitle = "Dashboard";
         Assert.assertEquals(actualTitle, expectedTitle);

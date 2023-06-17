@@ -9,23 +9,26 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import java.time.Duration;
 
 public class BlazeTestBase {
     public WebDriver driver;
 
+    @Parameters("url")
     @BeforeMethod
-    public void setup() {
+    public void setup(String url) {
         driver = DriverHelper.getDriver();
-        driver.get("https://www.demoblaze.com/#");
+        driver.get(url);
 
     }
 
+    @Parameters("packageName")
     @AfterMethod
-    public void tearDown(ITestResult iTestResult) {
+    public void tearDown(ITestResult iTestResult, String packageName) {
         if (!iTestResult.isSuccess()) {
-            BrowserUtils.getScreenShot(driver, "blazePictures");
+            BrowserUtils.getScreenShot(driver, packageName);
         }
         driver.quit();
     }
